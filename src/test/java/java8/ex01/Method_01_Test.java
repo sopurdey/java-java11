@@ -65,7 +65,7 @@ public class Method_01_Test {
 
 		DaoB daoB = new DaoB();
 
-		// TODO invoquer la méthode sumAge pour que le test soit passant
+		// Invoquer la méthode sumAge pour que le test soit passant
 		int result = daoB.sumAge();
 
 		assert result == 5050;

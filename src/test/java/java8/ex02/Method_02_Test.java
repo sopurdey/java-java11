@@ -21,11 +21,10 @@ public class Method_02_Test {
 		// exemple de résultat : "[14 persons]", "[30 persons]"
 		public default String format() {
 			List<Person> people = findAll();
-			int nb_personnes = 0;
-			for (int i = 0; i < people.size(); i++) {
-				nb_personnes += 1;
-			}
-			return "[" + nb_personnes + " persons]";
+
+			int taille = findAll().size();
+
+			return "[" + taille + " persons]";
 		}
 	}
 	// end::IDao[]

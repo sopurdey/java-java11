@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -22,7 +23,7 @@ public class Stream_02_Test {
 		List<Order> orders = new Data().getOrders();
 
 		// Trouver la liste des clients ayant déjà passés une commande
-		List<Customer> result = null;
+		List<Customer> result = orders.stream().map(o -> o.getCustomer()).distinct().collect(Collectors.toList());
 
 		assertThat(result, hasSize(2));
 	}

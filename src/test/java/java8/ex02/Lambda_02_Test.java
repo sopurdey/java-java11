@@ -37,13 +37,8 @@ public class Lambda_02_Test {
 
         // Transformer la liste de personnes en liste de comptes
         // Tous les objets comptes ont un solde à 100 par défaut
-        PersonToAccountMapper newMapper = new PersonToAccountMapper() {
-			@Override
-			public Account map(Person p) {
-				Account account = new Account(p, 100);
-				return account;
-			}
-		};
+        PersonToAccountMapper newMapper = p -> new Account(p, 100);
+        
 		List<Account> result = map(personList, newMapper);
         assert result.size() == personList.size();
         for (Account account : result) {
